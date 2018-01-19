@@ -10,6 +10,7 @@ public class Money {
 
     public Money(BigDecimal quantity, Currency currency) {
         this.quantity = quantity;
+        this.quantity.setScale(2, BigDecimal.ROUND_UP);
         this.currency = currency;
     }
 
@@ -29,6 +30,18 @@ public class Money {
             BigDecimal bg1 = this.quantity;
             BigDecimal bg2 = other.quantity;
             BigDecimal result = bg1.add(bg2);
+            result.setScale(2, BigDecimal.ROUND_UP);
+            return new Money(result, this.currency);
+        }
+    }
+    public Money subtract (Money other) {
+        if (this.currency != other.currency){
+            throw new IllegalArgumentException();
+        }
+        else{
+            BigDecimal bd1 = this.quantity;
+            BigDecimal bd2 = other.quantity;
+            BigDecimal result = bd1.subtract(bd2);
             result.setScale(2, BigDecimal.ROUND_UP);
             return new Money(result, this.currency);
         }
