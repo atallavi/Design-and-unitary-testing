@@ -11,22 +11,23 @@ public class Currency {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Currency currency = (Currency) o;
+
+        return name.equals(currency.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return name.hashCode();
+    }
+
+    @Override
     public String toString () {
         return this.name;
-    }
-
-    @Override
-    public boolean equals (Object other) {
-        if (this == other) return true;
-        if (other == null) return false;
-        if (getClass() != other.getClass()) return false;
-        if (this.name.equals(other.toString())) return true;
-        return true;
-    }
-
-    @Override
-    public int hashCode () {
-        return Objects.hash(name);
     }
 
 }

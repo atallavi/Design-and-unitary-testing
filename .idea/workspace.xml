@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="166a8920-b168-4195-ae31-df0c4cbf03a7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Design-and-unitary-testing/Test/MoneyTest.class" afterPath="$PROJECT_DIR$/out/production/Design-and-unitary-testing/Test/MoneyTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Design-and-unitary-testing/data/Money.class" afterPath="$PROJECT_DIR$/out/production/Design-and-unitary-testing/data/Money.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test/MoneyTest.java" afterPath="$PROJECT_DIR$/src/Test/MoneyTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/Currency.java" afterPath="$PROJECT_DIR$/src/data/Currency.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/Money.java" afterPath="$PROJECT_DIR$/src/data/Money.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/Ticket.java" afterPath="$PROJECT_DIR$/src/data/Ticket.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,21 +26,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Money.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Money.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/data/Money.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="55" lean-forward="false" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
-              <folding />
+            <state relative-caret-position="345">
+              <caret line="27" column="17" lean-forward="false" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MoneyTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MoneyTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Test/MoneyTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="930">
+              <caret line="62" column="29" lean-forward="false" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,10 +76,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/Test/MoneyTest.java" />
         <option value="$PROJECT_DIR$/src/data/Currency.java" />
         <option value="$PROJECT_DIR$/src/data/Ticket.java" />
         <option value="$PROJECT_DIR$/src/data/Money.java" />
-        <option value="$PROJECT_DIR$/src/Test/MoneyTest.java" />
       </list>
     </option>
   </component>
@@ -163,6 +164,31 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.MoneyTest.add_money_gets_correct_result_rounded">
+    <configuration name="MoneyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Design-and-unitary-testing" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.MoneyTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <configuration name="MoneyTest.add_money_gets_correct_result" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -238,7 +264,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="MoneyTest.subtrac_money_with_different_currency_throws_exception" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MoneyTest.multiply_gets_correct_result" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="Test.*" />
@@ -250,32 +276,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="Test" />
       <option name="MAIN_CLASS_NAME" value="Test.MoneyTest" />
-      <option name="METHOD_NAME" value="subtrac_money_with_different_currency_throws_exception" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="MoneyTest.toString_returns_correct_string" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Design-and-unitary-testing" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Test" />
-      <option name="MAIN_CLASS_NAME" value="Test.MoneyTest" />
-      <option name="METHOD_NAME" value="toString_returns_correct_string" />
+      <option name="METHOD_NAME" value="multiply_gets_correct_result" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -371,18 +372,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.MoneyTest.add_money_gets_correct_result" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.MoneyTest.add_money_with_different_currency_throws_exception" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.MoneyTest.toString_returns_correct_string" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.MoneyTest.subtrac_money_with_different_currency_throws_exception" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.MoneyTest.add_money_gets_correct_result_rounded" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.MoneyTest.add_money_gets_correct_result_rounded" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.MoneyTest.multiply_gets_correct_result" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.MoneyTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.MoneyTest.add_money_with_different_currency_throws_exception" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.MoneyTest.add_money_gets_correct_result_rounded" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.MoneyTest.add_money_gets_correct_result" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.MoneyTest.subtrac_money_with_different_currency_throws_exception" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.MoneyTest.toString_returns_correct_string" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.MoneyTest.add_money_with_different_currency_throws_exception" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.MoneyTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.MoneyTest.add_money_with_different_currency_throws_exception" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.MoneyTest.multiply_gets_correct_result" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.MoneyTest.add_money_gets_correct_result" />
       </list>
     </recent_temporary>
   </component>
@@ -400,35 +401,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MoneyTest_add_money_gets_correct_result - 2018.01.19 at 10h 23m 38s.xml">
-      <configuration name="MoneyTest.add_money_gets_correct_result" configurationId="JUnit" />
+    <history-entry file="MoneyTest - 2018.01.19 at 10h 59m 26s.xml">
+      <configuration name="MoneyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MoneyTest_add_money_gets_correct_result_rounded - 2018.01.19 at 10h 23m 22s.xml">
+    <history-entry file="MoneyTest - 2018.01.19 at 11h 12m 25s.xml">
+      <configuration name="MoneyTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MoneyTest_add_money_gets_correct_result_rounded - 2018.01.19 at 10h 56m 51s.xml">
       <configuration name="MoneyTest.add_money_gets_correct_result_rounded" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MoneyTest_add_money_gets_correct_result_rounded - 2018.01.19 at 10h 23m 42s.xml">
+    <history-entry file="MoneyTest_add_money_gets_correct_result_rounded - 2018.01.19 at 11h 12m 55s.xml">
       <configuration name="MoneyTest.add_money_gets_correct_result_rounded" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MoneyTest_add_money_gets_correct_result_rounded - 2018.01.19 at 10h 24m 37s.xml">
+    <history-entry file="MoneyTest_add_money_gets_correct_result_rounded - 2018.01.19 at 11h 16m 01s.xml">
       <configuration name="MoneyTest.add_money_gets_correct_result_rounded" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MoneyTest_add_money_gets_correct_result_rounded - 2018.01.19 at 10h 24m 54s.xml">
+    <history-entry file="MoneyTest_add_money_gets_correct_result_rounded - 2018.01.19 at 11h 16m 40s.xml">
       <configuration name="MoneyTest.add_money_gets_correct_result_rounded" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MoneyTest_add_money_gets_correct_result_rounded - 2018.01.19 at 10h 26m 07s.xml">
-      <configuration name="MoneyTest.add_money_gets_correct_result_rounded" configurationId="JUnit" />
+    <history-entry file="MoneyTest_add_money_with_different_currency_throws_exception - 2018.01.19 at 11h 08m 59s.xml">
+      <configuration name="MoneyTest.add_money_with_different_currency_throws_exception" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MoneyTest_add_money_gets_correct_result_rounded - 2018.01.19 at 10h 28m 29s.xml">
-      <configuration name="MoneyTest.add_money_gets_correct_result_rounded" configurationId="JUnit" />
+    <history-entry file="MoneyTest_add_money_with_different_currency_throws_exception - 2018.01.19 at 11h 11m 23s.xml">
+      <configuration name="MoneyTest.add_money_with_different_currency_throws_exception" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MoneyTest_subtrac_money_with_different_currency_throws_exception - 2018.01.18 at 20h 04m 16s.xml">
-      <configuration name="MoneyTest.subtrac_money_with_different_currency_throws_exception" configurationId="JUnit" />
+    <history-entry file="MoneyTest_multiply_gets_correct_result - 2018.01.19 at 10h 59m 45s.xml">
+      <configuration name="MoneyTest.multiply_gets_correct_result" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MoneyTest_toString_returns_correct_string - 2018.01.18 at 18h 47m 15s.xml">
-      <configuration name="MoneyTest.toString_returns_correct_string" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MoneyTest_toString_returns_correct_string - 2018.01.18 at 19h 47m 42s.xml">
-      <configuration name="MoneyTest.toString_returns_correct_string" configurationId="JUnit" />
+    <history-entry file="MoneyTest_multiply_gets_correct_result - 2018.01.19 at 11h 01m 39s.xml">
+      <configuration name="MoneyTest.multiply_gets_correct_result" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -443,7 +444,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3625171" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2257182" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299712" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -454,7 +455,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3994528" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19835842" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -468,7 +469,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="4" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -476,7 +479,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -513,25 +518,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/Currency.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#126#127#0" expanded="true" />
-            <element signature="e#158#159#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/Ticket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/java/lang/Object.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -543,18 +529,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/Money.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/Assert.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="55" lean-forward="false" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
+        <state relative-caret-position="143">
+          <caret line="71" column="23" lean-forward="false" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="231" column="0" lean-forward="false" selection-start-line="231" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runner/JUnitCore.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/Currency.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="13" column="37" lean-forward="false" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+          <folding>
+            <element signature="e#450#451#0" expanded="true" />
+            <element signature="e#488#489#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/Ticket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="18" column="37" lean-forward="false" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+          <folding>
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#556#557#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Test/MoneyTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="930">
+          <caret line="62" column="29" lean-forward="false" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/Money.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="27" column="17" lean-forward="false" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

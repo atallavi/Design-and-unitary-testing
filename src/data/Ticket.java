@@ -16,15 +16,17 @@ public class Ticket {
     }
 
     @Override
-    public boolean equals (Object other) {
-        if (this == other) return true;
-        if (other == null) return false;
-        if (getClass() != other.getClass()) return false;
-        if (this.name.equals(other.toString())) return true;
-        return true;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Ticket ticket = (Ticket) o;
+
+        return name.equals(ticket.name);
     }
+
     @Override
-    public int hashCode () {
-        return Objects.hash(name);
+    public int hashCode() {
+        return name.hashCode();
     }
 }

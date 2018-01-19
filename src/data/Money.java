@@ -1,6 +1,9 @@
 package data;
 
+import com.sun.org.apache.bcel.internal.generic.MONITORENTER;
+
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 
 public class Money {
@@ -22,15 +25,23 @@ public class Money {
         return quantity;
     }
 
+    //Incompleted
+    public Money change (BigDecimal ratio, Currency currencyTo) throws IllegalArgumentException {
+        if (this.currency.equals(currencyTo)) {
+            throw new IllegalArgumentException();
+        }
+        throw new UnsupportedOperationException();
+    }
+
     public Money add (Money other) throws IllegalArgumentException {
-        if (this.currency != other.currency){
+        if (!(this.currency.equals(other.currency))){
             throw new IllegalArgumentException();
         }
         else{
             BigDecimal bg1 = this.quantity;
             BigDecimal bg2 = other.quantity;
             BigDecimal result = bg1.add(bg2);
-            result.setScale(2, BigDecimal.ROUND_UP);
+            result.setScale(2, RoundingMode.HALF_UP);
             return new Money(result, this.currency);
         }
     }
@@ -45,6 +56,12 @@ public class Money {
             result.setScale(2, BigDecimal.ROUND_UP);
             return new Money(result, this.currency);
         }
+    }
+
+    public Money multiply (int multiplier) {
+        BigDecimal newQuantity = this.quantity.multiply(new BigDecimal(String.valueOf(multiplier)));
+        newQuantity.setScale(2, BigDecimal.ROUND_UP);
+        return new Money(newQuantity, this.currency);
     }
 
 
