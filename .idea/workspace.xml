@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="166a8920-b168-4195-ae31-df0c4cbf03a7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test/MoneyTest.java" afterPath="$PROJECT_DIR$/src/Test/MoneyTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/Currency.java" afterPath="$PROJECT_DIR$/src/data/Currency.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/Money.java" afterPath="$PROJECT_DIR$/src/data/Money.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/Ticket.java" afterPath="$PROJECT_DIR$/src/data/Ticket.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/services/MoneyExchange.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/services/RatioDoesNotExistException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/services/StockExchange.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/services/TicketDoesNotExistException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,7 +27,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Money.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Money.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/data/Money.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
@@ -38,11 +39,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MoneyTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Test/MoneyTest.java">
+      <file leaf-file-name="RatioDoesNotExistException.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/services/RatioDoesNotExistException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="930">
-              <caret line="62" column="29" lean-forward="false" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+            <state relative-caret-position="45">
+              <caret line="3" column="55" lean-forward="false" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
+              <folding>
+                <element signature="e#163#164#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MoneyExchange.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/services/MoneyExchange.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="64" lean-forward="false" selection-start-line="7" selection-start-column="64" selection-end-line="7" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -55,8 +68,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -80,6 +94,10 @@
         <option value="$PROJECT_DIR$/src/data/Currency.java" />
         <option value="$PROJECT_DIR$/src/data/Ticket.java" />
         <option value="$PROJECT_DIR$/src/data/Money.java" />
+        <option value="$PROJECT_DIR$/src/services/MoneyExchange.java" />
+        <option value="$PROJECT_DIR$/src/services/StockExchange.java" />
+        <option value="$PROJECT_DIR$/src/services/TicketDoesNotExistException.java" />
+        <option value="$PROJECT_DIR$/src/services/RatioDoesNotExistException.java" />
       </list>
     </option>
   </component>
@@ -123,7 +141,7 @@
               <item name="Design-and-unitary-testing" type="b2602c69:ProjectViewProjectNode" />
               <item name="Design-and-unitary-testing" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Design-and-unitary-testing" type="b2602c69:ProjectViewProjectNode" />
@@ -149,6 +167,9 @@
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="services" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -434,7 +455,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1388" height="803" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -450,7 +470,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -575,12 +595,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/MoneyTest.java">
+    <entry file="file://$PROJECT_DIR$/src/services/StockExchange.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="62" column="29" lean-forward="false" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+        <state relative-caret-position="90">
+          <caret line="6" column="65" lean-forward="true" selection-start-line="6" selection-start-column="65" selection-end-line="6" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/TicketDoesNotExistException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="56" lean-forward="false" selection-start-line="3" selection-start-column="56" selection-end-line="3" selection-end-column="56" />
+          <folding>
+            <element signature="e#165#166#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -591,6 +621,36 @@
           <caret line="27" column="17" lean-forward="false" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test/MoneyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="62" column="29" lean-forward="false" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/MoneyExchange.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="64" lean-forward="false" selection-start-line="7" selection-start-column="64" selection-end-line="7" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/RatioDoesNotExistException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="55" lean-forward="false" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
+          <folding>
+            <element signature="e#163#164#0" expanded="true" />
           </folding>
         </state>
       </provider>
