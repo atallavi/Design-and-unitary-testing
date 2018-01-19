@@ -49,10 +49,19 @@ public class MoneyTest {
     }
 
     @org.junit.Test (expected = IllegalArgumentException.class)
-    public void subtrac_money_with_different_currency_throws_exception () throws IllegalArgumentException {
+    public void subtract_money_with_different_currency_throws_exception () throws IllegalArgumentException {
         Money euros = new Money(new BigDecimal("3.00"), new Currency("euros"));
         Money dollars = new Money(new BigDecimal("3.00"), new Currency("dollars"));
         Money result = euros.subtract(dollars);
+    }
+
+    @org.junit.Test
+    public void subtract_money_gets_correct_result () {
+        Currency currency= new Currency("currency");
+        Money moneyOne = new Money(new BigDecimal("3.00"), currency);
+        Money moneyTwo = new Money(new BigDecimal("10.07"), currency);
+        Money result = moneyOne.subtract(moneyTwo);
+        assertEquals(new Money(new BigDecimal("-7.07"), currency), result);
     }
 
     @org.junit.Test
@@ -60,7 +69,8 @@ public class MoneyTest {
         Currency currency = new Currency("money");
         Money money = new Money(new BigDecimal("3.00"), currency);
         Money result = money.multiply(3);
-        assertTrue(new Money(new BigDecimal("9.00"), currency).equals(money));
+        Money expected = new Money(new BigDecimal("9.00"), currency);
+        assertTrue(expected.equals(money));
     }
 
 }

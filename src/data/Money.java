@@ -12,8 +12,7 @@ public class Money {
     private Currency currency;
 
     public Money(BigDecimal quantity, Currency currency) {
-        this.quantity = quantity;
-        this.quantity.setScale(2, BigDecimal.ROUND_UP);
+        this.quantity = quantity.setScale(2, BigDecimal.ROUND_UP);
         this.currency = currency;
     }
 
@@ -25,14 +24,7 @@ public class Money {
         return quantity;
     }
 
-    //Incompleted
-    public Money change (BigDecimal ratio, Currency currencyTo) throws IllegalArgumentException {
-        if (this.currency.equals(currencyTo)) {
-            throw new IllegalArgumentException();
-        }
-        throw new UnsupportedOperationException();
-    }
-
+    //Incomplete
     public Money add (Money other) throws IllegalArgumentException {
         if (!(this.currency.equals(other.currency))){
             throw new IllegalArgumentException();
@@ -41,10 +33,11 @@ public class Money {
             BigDecimal bg1 = this.quantity;
             BigDecimal bg2 = other.quantity;
             BigDecimal result = bg1.add(bg2);
-            result.setScale(2, RoundingMode.HALF_UP);
+            result = result.setScale(2, RoundingMode.HALF_UP);
             return new Money(result, this.currency);
         }
     }
+
     public Money subtract (Money other) {
         if (this.currency != other.currency){
             throw new IllegalArgumentException();
@@ -57,13 +50,20 @@ public class Money {
             return new Money(result, this.currency);
         }
     }
-
     public Money multiply (int multiplier) {
         BigDecimal newQuantity = this.quantity.multiply(new BigDecimal(String.valueOf(multiplier)));
-        newQuantity.setScale(2, BigDecimal.ROUND_UP);
+        newQuantity = newQuantity.setScale(2, BigDecimal.ROUND_UP);
         return new Money(newQuantity, this.currency);
     }
 
+
+    public Money change (BigDecimal ratio, Currency currencyTo) throws IllegalArgumentException {
+        if (this.currency.equals(currencyTo)) {
+            throw new IllegalArgumentException();
+        }
+        BigDecimal newQuantity = this.quantity.multiply(ratio).setScale(2,BigDecimal.ROUND_UP);
+        return new Money(newQuantity, currencyTo);
+    }
 
     @Override
     public int hashCode() {
