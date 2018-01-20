@@ -26,7 +26,7 @@ public class MoneyTest {
         assertTrue(expected.equals(result));
     }
 
-    //Fails
+
     @org.junit.Test
     public void  add_money_gets_correct_result_rounded () {
         Currency currency = new Currency("money");
@@ -62,6 +62,7 @@ public class MoneyTest {
         Money moneyTwo = new Money(new BigDecimal("10.07"), currency);
         Money result = moneyOne.subtract(moneyTwo);
         assertEquals(new Money(new BigDecimal("-7.07"), currency), result);
+
     }
 
     @org.junit.Test
@@ -70,7 +71,7 @@ public class MoneyTest {
         Money money = new Money(new BigDecimal("3.00"), currency);
         Money result = money.multiply(3);
         Money expected = new Money(new BigDecimal("9.00"), currency);
-        assertTrue(expected.equals(money));
+        assertTrue(expected.equals(result));
     }
 
 }
