@@ -12,24 +12,35 @@ import java.math.BigDecimal;
 
 public class FutureBuy implements Investment {
 
-    Ticket ticket;
-    int numShares;
-    Money pricePerShare;
+    private Ticket ticket;
+    private int numShares;
+    private Money pricePerShare;
 
     public FutureBuy(Ticket ticket, int numShares, Money pricePerShare) {
         this.ticket = ticket;
         this.numShares = numShares;
         this.pricePerShare = pricePerShare;
     }
+    public Ticket getTicket() {
+        return ticket;
+    }
+
+    public int getNumShares() {
+        return numShares;
+    }
+
+    public Money getPricePerShare() {
+        return pricePerShare;
+    }
 
     @Override
     public Money evaluate(Currency currencyTo, MoneyExchange moneyExchange, StockExchange stockExchange)
             throws EvaluationException, RatioDoesNotExistException, TicketDoesNotExistException {
 
-        Money moneyOfTicket = stockExchange.value(this.ticket);
-        BigDecimal ratio = moneyExchange.exchangeRatio(moneyOfTicket.getCurrency(), currencyTo);
-        Money subtract = (moneyOfTicket.change(ratio, currencyTo)).subtract(pricePerShare);
-        return subtract.multiply(numShares);
+        Money valueOfTicket = stockExchange.value(this.ticket);
+        BigDecimal ratio = moneyExchange.exchangeRatio(valueOfTicket.getCurrency(), currencyTo);
+        Money subtract = valueOfTicket.subtract(pricePerShare);
+        return subtract.change(ratio, currencyTo).multiply(numShares);
     }
 
 

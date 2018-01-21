@@ -60,7 +60,7 @@ public class StockTest {
     }
 
     @Test (expected = TicketDoesNotExistException.class)
-    public void evaluate_with_unnexistent_ticket () throws Exception {
+    public void evaluate_with_none_existent_ticket () throws Exception {
         Money money = stock.evaluate(currencyTo, moneyExchangeDouble, new StockExchangeDoubleThrowsTicketException());
     }
 
