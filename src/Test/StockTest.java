@@ -14,17 +14,17 @@ import java.math.BigDecimal;
 
 public class StockTest {
 
-    MoneyExchangeDouble moneyExchangeDouble;
-    StockExchangeDouble stockExchangeDouble;
+    MoneyExchangeDoubleReturnsBigD moneyExchangeDouble;
+    StockExchangeDoubleReturnsMoney stockExchangeDouble;
     Stock stock;
     Currency currencyTo;
 
     @Before
     public void setUp() throws Exception {
-        moneyExchangeDouble = new MoneyExchangeDouble();
-        stockExchangeDouble = new StockExchangeDouble();
+        moneyExchangeDouble = new MoneyExchangeDoubleReturnsBigD();
+        stockExchangeDouble = new StockExchangeDoubleReturnsMoney();
         stock = new Stock(new Ticket("TST"), 7);
-        currencyTo = new Currency("anyCurrencyfrom");
+        currencyTo = new Currency("anyCurrencyFrom");
     }
 
     @Test
@@ -34,18 +34,45 @@ public class StockTest {
 
     }
 
-    public class StockExchangeDouble implements StockExchange {
+    public class StockExchangeDoubleReturnsMoney implements StockExchange {
         @Override
         public Money value(Ticket ticket) throws TicketDoesNotExistException {
             return new Money(new BigDecimal("1.00"), new Currency("anyCurrencyTo"));
         }
     }
 
-    public class MoneyExchangeDouble implements MoneyExchange {
+    public class MoneyExchangeDoubleReturnsBigD implements MoneyExchange {
         @Override
         public BigDecimal exchangeRatio(Currency from, Currency to) throws RatioDoesNotExistException, EvaluationException {
             return new BigDecimal("1.55");
         }
     }
+
+    @Test (expected = RatioDoesNotExistException.class)
+    public void evaluate_with_no_exchange_ratio_avaliable_throws_exception () throws Exception {
+        Money money = stock.evaluate(currencyTo, new MoneyExchangeDoubleThrowsRatioException(), stockExchangeDouble);
+    }
+    public class MoneyExchangeDoubleThrowsRatioException implements MoneyExchange {
+        @Override
+        public BigDecimal exchangeRatio(Currency from, Currency to) throws RatioDoesNotExistException, EvaluationException {
+            throw new RatioDoesNotExistException("No ratio available");
+        }
+    }
+
+    @Test (expected = TicketDoesNotExistException.class)
+    public void evaluate_with_unnexistent_ticket () throws Exception {
+        Money money = stock.evaluate(currencyTo, moneyExchangeDouble, new StockExchangeDoubleThrowsTicketException());
+    }
+
+    public class StockExchangeDoubleThrowsTicketException implements StockExchange {
+
+        @Override
+        public Money value(Ticket ticket) throws TicketDoesNotExistException {
+            throw new TicketDoesNotExistException("Ticket does not exist");
+        }
+    }
+
+
+
 
 }
