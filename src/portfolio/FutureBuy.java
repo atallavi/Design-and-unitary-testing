@@ -21,26 +21,20 @@ public class FutureBuy implements Investment {
         this.numShares = numShares;
         this.pricePerShare = pricePerShare;
     }
-    public Ticket getTicket() {
-        return ticket;
-    }
 
-    public int getNumShares() {
-        return numShares;
-    }
-
-    public Money getPricePerShare() {
-        return pricePerShare;
-    }
 
     @Override
     public Money evaluate(Currency currencyTo, MoneyExchange moneyExchange, StockExchange stockExchange)
-            throws EvaluationException, RatioDoesNotExistException, TicketDoesNotExistException {
+            throws EvaluationException {
 
-        Money valueOfTicket = stockExchange.value(this.ticket);
-        BigDecimal ratio = moneyExchange.exchangeRatio(valueOfTicket.getCurrency(), currencyTo);
-        Money subtract = valueOfTicket.subtract(pricePerShare);
-        return subtract.change(ratio, currencyTo).multiply(numShares);
+        try {
+            Money valueOfTicket = stockExchange.value(this.ticket);
+            BigDecimal ratio = moneyExchange.exchangeRatio(valueOfTicket.getCurrency(), currencyTo);
+            Money subtract = valueOfTicket.subtract(pricePerShare);
+            return subtract.change(ratio, currencyTo).multiply(numShares);
+        }catch (Exception e) {
+            throw new EvaluationException("Mssg");
+        }
     }
 
 

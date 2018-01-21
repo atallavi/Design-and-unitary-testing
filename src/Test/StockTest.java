@@ -48,8 +48,8 @@ public class StockTest {
         }
     }
 
-    @Test (expected = RatioDoesNotExistException.class)
-    public void evaluate_with_no_exchange_ratio_avaliable_throws_exception () throws Exception {
+    @Test (expected = EvaluationException.class)
+    public void evaluate_with_no_exchange_ratio_avaliable_throws_exception () throws EvaluationException {
         Money money = stock.evaluate(currencyTo, new MoneyExchangeDoubleThrowsRatioException(), stockExchangeDouble);
     }
     public class MoneyExchangeDoubleThrowsRatioException implements MoneyExchange {
@@ -59,7 +59,7 @@ public class StockTest {
         }
     }
 
-    @Test (expected = TicketDoesNotExistException.class)
+    @Test (expected = EvaluationException.class)
     public void evaluate_with_none_existent_ticket () throws Exception {
         Money money = stock.evaluate(currencyTo, moneyExchangeDouble, new StockExchangeDoubleThrowsTicketException());
     }

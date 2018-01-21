@@ -22,8 +22,13 @@ public class Cash implements Investment {
 
     @Override
     public Money evaluate(Currency currencyTo, MoneyExchange moneyExchange, StockExchange stockExchange)
-            throws EvaluationException, RatioDoesNotExistException {
-        BigDecimal ratio = moneyExchange.exchangeRatio(this.money.getCurrency(), currencyTo);
-        return this.money.change(ratio, currencyTo);
+            throws EvaluationException {
+        try {
+            BigDecimal ratio = moneyExchange.exchangeRatio(this.money.getCurrency(), currencyTo);
+            return this.money.change(ratio, currencyTo);
+        }catch (Exception e){
+            throw new EvaluationException("No ratio");
+        }
+
     }
 }

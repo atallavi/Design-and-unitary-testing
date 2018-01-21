@@ -9,5 +9,5 @@ import services.TicketDoesNotExistException;
 
 public interface Investment {
     Money evaluate (Currency currencyTo, MoneyExchange moneyExchange, StockExchange stockExchange)
-            throws EvaluationException, RatioDoesNotExistException, TicketDoesNotExistException;
+            throws EvaluationException, RatioDoesNotExistException;
 }

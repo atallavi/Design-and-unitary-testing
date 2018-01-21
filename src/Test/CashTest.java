@@ -26,8 +26,8 @@ public class CashTest {
     }
 
 
-    @Test (expected = RatioDoesNotExistException.class)
-    public void evaluate_none_existent_ratio_throws_exception() throws EvaluationException, RatioDoesNotExistException {
+    @Test (expected = EvaluationException.class)
+    public void evaluate_none_existent_ratio_throws_exception() throws EvaluationException {
         Money newMoney = cash.evaluate(currencyTo, new MoneyExchangeDoubleThrowsRatioException(), stockExchangeDouble);
     }
 
@@ -52,7 +52,7 @@ public class CashTest {
         }
     }
 
-    @Test (expected = RatioDoesNotExistException.class)
+    @Test (expected = EvaluationException.class)
     public void evaluate_same_currencies() throws RatioDoesNotExistException, EvaluationException {
         Cash cash = new Cash(new Money(new BigDecimal("7.0"), currencyTo));
         Money newMoney = cash.evaluate(currencyTo, new MoneyExchangeDouble(), stockExchangeDouble);

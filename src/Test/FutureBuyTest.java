@@ -38,7 +38,7 @@ public class FutureBuyTest {
     public void evaluate() throws Exception {
         futureBuy = new FutureBuy(ticket, 2, new Money(new BigDecimal("100"), currencyFrom));
         Money evaluated = futureBuy.evaluate(currencyTo, moneyExchangeDouble, stockExchangeDouble);
-        assertEquals(new Money(new BigDecimal("-^90"), currencyTo), evaluated);
+        assertEquals(new Money(new BigDecimal("-90"), currencyTo), evaluated);
     }
     public class StockExchangeDoubleReturnsMoney implements StockExchange {
         @Override

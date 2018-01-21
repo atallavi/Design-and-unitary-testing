@@ -22,10 +22,15 @@ public class Stock implements Investment {
 
     @Override
     public Money evaluate(Currency currencyTo, MoneyExchange moneyExchange, StockExchange stockExchange)
-            throws EvaluationException, RatioDoesNotExistException, TicketDoesNotExistException {
+            throws EvaluationException{
 
-        Money moneyOfTicket = stockExchange.value(this.ticket);
-        BigDecimal ratio = moneyExchange.exchangeRatio(moneyOfTicket.getCurrency(), currencyTo);
-        return moneyOfTicket.change(ratio, currencyTo);
+        try {
+            Money moneyOfTicket = stockExchange.value(this.ticket);
+            BigDecimal ratio = moneyExchange.exchangeRatio(moneyOfTicket.getCurrency(), currencyTo);
+            return moneyOfTicket.change(ratio, currencyTo);
+        }catch (Exception e) {
+            throw new EvaluationException("Mssg");
+        }
+
     }
 }
