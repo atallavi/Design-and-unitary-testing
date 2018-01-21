@@ -29,7 +29,10 @@ public abstract class AbstractFuture implements Investment{
             Money valueOfTicket = stockExchange.value(this.ticket);
             BigDecimal ratio = moneyExchange.exchangeRatio(valueOfTicket.getCurrency(), currencyTo);
             Money subtract = valueOfTicket.subtract(pricePerShare);
-            return subtract.change(ratio, currencyTo).multiply(numShares);
+
+            return (subtract.getCurrency() == currencyTo) ? subtract.multiply(numShares) :
+                    subtract.change(ratio, currencyTo).multiply(numShares);
+
         }catch (Exception e) {
             throw new EvaluationException("Mssg");
         }

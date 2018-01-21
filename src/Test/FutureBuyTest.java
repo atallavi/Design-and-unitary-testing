@@ -53,5 +53,10 @@ public class FutureBuyTest {
             return new BigDecimal("0.5");
         }
     }
-
+    @Test
+    public void evaluate_same_currencies() throws Exception {
+        futureBuy = new FutureBuy(ticket, 2, new Money(new BigDecimal("100"), currencyFrom));
+        Money evaluated = futureBuy.evaluate(currencyFrom, moneyExchangeDouble, stockExchangeDouble);
+        assertEquals(new Money(new BigDecimal("-180"), currencyFrom), evaluated);
+    }
 }
