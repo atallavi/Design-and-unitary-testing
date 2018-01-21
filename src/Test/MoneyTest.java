@@ -2,21 +2,20 @@ package Test;
 
 import data.Currency;
 import data.Money;
-
 import java.math.BigDecimal;
-
 import static org.junit.Assert.*;
+import org.junit.Test;
 
 public class MoneyTest {
 
-    @org.junit.Test (expected = IllegalArgumentException.class)
+    @Test (expected = IllegalArgumentException.class)
     public void add_money_with_different_currency_throws_exception () throws IllegalArgumentException{
         Money euros = new Money(new BigDecimal("3.00"), new Currency("euros"));
         Money dollars = new Money(new BigDecimal("3.00"), new Currency("dollars"));
         Money result = euros.add(dollars);
     }
 
-    @org.junit.Test
+    @Test
     public void  add_money_gets_correct_result () {
         Currency currency = new Currency("money");
         Money moneyOne = new Money(new BigDecimal("3.00"), currency);
@@ -27,7 +26,7 @@ public class MoneyTest {
     }
 
 
-    @org.junit.Test
+    @Test
     public void  add_money_gets_correct_result_rounded () {
         Currency currency = new Currency("money");
         Money moneyOne = new Money(new BigDecimal("3.45"), currency);
@@ -38,7 +37,7 @@ public class MoneyTest {
     }
 
 
-    @org.junit.Test
+    @Test
     public void toString_returns_correct_string () {
         Money money = new Money(new BigDecimal("3.00"), new Currency("money"));
         String expected = money.toString();
@@ -48,14 +47,14 @@ public class MoneyTest {
                                     '}'));
     }
 
-    @org.junit.Test (expected = IllegalArgumentException.class)
+    @Test (expected = IllegalArgumentException.class)
     public void subtract_money_with_different_currency_throws_exception () throws IllegalArgumentException {
         Money euros = new Money(new BigDecimal("3.00"), new Currency("euros"));
         Money dollars = new Money(new BigDecimal("3.00"), new Currency("dollars"));
         Money result = euros.subtract(dollars);
     }
 
-    @org.junit.Test
+    @Test
     public void subtract_money_gets_correct_result () {
         Currency currency= new Currency("currency");
         Money moneyOne = new Money(new BigDecimal("3.00"), currency);
@@ -65,7 +64,7 @@ public class MoneyTest {
 
     }
 
-    @org.junit.Test
+    @Test
     public void multiply_gets_correct_result () {
         Currency currency = new Currency("money");
         Money money = new Money(new BigDecimal("3.00"), currency);

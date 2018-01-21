@@ -23,8 +23,7 @@ public class Cash implements Investment {
     @Override
     public Money evaluate(Currency currencyTo, MoneyExchange moneyExchange, StockExchange stockExchange)
             throws EvaluationException, RatioDoesNotExistException {
-        
-        BigDecimal exchange = moneyExchange.exchangeRatio(this.getMoney().getCurrency(), currencyTo);
-        return this.getMoney().change(exchange, currencyTo);
+        BigDecimal ratio = moneyExchange.exchangeRatio(this.money.getCurrency(), currencyTo);
+        return this.money.change(ratio, currencyTo);
     }
 }
