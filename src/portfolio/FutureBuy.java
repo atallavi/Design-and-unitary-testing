@@ -10,32 +10,14 @@ import services.TicketDoesNotExistException;
 
 import java.math.BigDecimal;
 
-public class FutureBuy implements Investment {
-
-    private Ticket ticket;
-    private int numShares;
-    private Money pricePerShare;
+public class FutureBuy extends AbstractFuture{
 
     public FutureBuy(Ticket ticket, int numShares, Money pricePerShare) {
-        this.ticket = ticket;
-        this.numShares = numShares;
-        this.pricePerShare = pricePerShare;
+        super(ticket, numShares, pricePerShare);
     }
-
 
     @Override
-    public Money evaluate(Currency currencyTo, MoneyExchange moneyExchange, StockExchange stockExchange)
-            throws EvaluationException {
-
-        try {
-            Money valueOfTicket = stockExchange.value(this.ticket);
-            BigDecimal ratio = moneyExchange.exchangeRatio(valueOfTicket.getCurrency(), currencyTo);
-            Money subtract = valueOfTicket.subtract(pricePerShare);
-            return subtract.change(ratio, currencyTo).multiply(numShares);
-        }catch (Exception e) {
-            throw new EvaluationException("Mssg");
-        }
+    public Money evaluate(Currency currencyTo, MoneyExchange moneyExchange, StockExchange stockExchange) throws EvaluationException {
+        return super.evaluate(currencyTo, moneyExchange, stockExchange);
     }
-
-
 }

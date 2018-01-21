@@ -8,20 +8,14 @@ import services.RatioDoesNotExistException;
 import services.StockExchange;
 import services.TicketDoesNotExistException;
 
-public class FutureSell implements Investment {
-
-    private Ticket ticket;
-    private int numShares;
-    private Money pricePerShare;
+public class FutureSell extends AbstractFuture {
 
     public FutureSell(Ticket ticket, int numShares, Money pricePerShare) {
-        this.ticket = ticket;
-        this.numShares = numShares;
-        this.pricePerShare = pricePerShare;
+        super(ticket, numShares, pricePerShare);
     }
 
     @Override
     public Money evaluate(Currency currencyTo, MoneyExchange moneyExchange, StockExchange stockExchange) throws EvaluationException {
-        return null;
+        return super.evaluate(currencyTo, moneyExchange, stockExchange);
     }
 }
