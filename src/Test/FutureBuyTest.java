@@ -35,28 +35,35 @@ public class FutureBuyTest {
 
     }
     @Test
-    public void evaluate() throws Exception {
-        futureBuy = new FutureBuy(ticket, 2, new Money(new BigDecimal("100"), currencyFrom));
+    public void evaluate_different_currencies() throws Exception {
+        futureBuy = new FutureBuy(ticket, 10, new Money(new BigDecimal("10"), currencyFrom));
         Money evaluated = futureBuy.evaluate(currencyTo, moneyExchangeDouble, stockExchangeDouble);
-        assertEquals(new Money(new BigDecimal("-90"), currencyTo), evaluated);
+        assertEquals(new Money(new BigDecimal("900"), currencyTo), evaluated);
     }
     public class StockExchangeDoubleReturnsMoney implements StockExchange {
         @Override
         public Money value(Ticket ticket) throws TicketDoesNotExistException {
-            return new Money(new BigDecimal("10"), currencyFrom);
+            return new Money(new BigDecimal("100"), currencyFrom);
         }
     }
 
     public class MoneyExchangeDoubleReturnsBigD implements MoneyExchange {
         @Override
         public BigDecimal exchangeRatio(Currency from, Currency to) throws RatioDoesNotExistException, EvaluationException {
-            return new BigDecimal("0.5");
+            return new BigDecimal("1");
         }
     }
     @Test
     public void evaluate_same_currencies() throws Exception {
-        futureBuy = new FutureBuy(ticket, 2, new Money(new BigDecimal("100"), currencyFrom));
+        futureBuy = new FutureBuy(ticket, 10, new Money(new BigDecimal("10"), currencyFrom));
         Money evaluated = futureBuy.evaluate(currencyFrom, moneyExchangeDouble, stockExchangeDouble);
-        assertEquals(new Money(new BigDecimal("-180"), currencyFrom), evaluated);
+        assertEquals(new Money(new BigDecimal("900"), currencyFrom), evaluated);
     }
+    @Test (expected = RatioDoesNotExistException.class)
+    public void evaluate_when_ratio_does_not_exist () throws Exception {
+        futureBuy = new FutureBuy(ticket, 10, new Money(new BigDecimal("10"), currencyFrom));
+        Money evaluated = futureBuy.evaluate(currencyTo, moneyExchangeDouble, stockExchangeDouble);
+    }
+
+    
 }

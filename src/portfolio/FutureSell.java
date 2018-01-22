@@ -18,4 +18,10 @@ public class FutureSell extends AbstractFuture {
     public Money evaluate(Currency currencyTo, MoneyExchange moneyExchange, StockExchange stockExchange) throws EvaluationException {
         return super.evaluate(currencyTo, moneyExchange, stockExchange);
     }
+
+    @Override
+    public Money operationToDo(Money valueOfTheTicket, Money pricePerShare) {
+        return  pricePerShare.subtract(valueOfTheTicket);
+    }
+
 }

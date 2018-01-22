@@ -25,7 +25,7 @@ public class Cash implements Investment {
             throws EvaluationException {
         try {
             BigDecimal ratio = moneyExchange.exchangeRatio(this.money.getCurrency(), currencyTo);
-            return this.money.change(ratio, currencyTo);
+            return this.money.getCurrency().equals(currencyTo) ? this.money : this.money.change(ratio, currencyTo);
         }catch (Exception e){
             throw new EvaluationException("No ratio");
         }

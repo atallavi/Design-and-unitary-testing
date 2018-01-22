@@ -26,16 +26,18 @@ public abstract class AbstractFuture implements Investment{
             throws EvaluationException {
 
         try {
-            Money valueOfTicket = stockExchange.value(this.ticket);
-            BigDecimal ratio = moneyExchange.exchangeRatio(valueOfTicket.getCurrency(), currencyTo);
-            Money subtract = valueOfTicket.subtract(pricePerShare);
+            Money valueOfTheTicket = stockExchange.value(this.ticket);
+            BigDecimal ratio = moneyExchange.exchangeRatio(valueOfTheTicket.getCurrency(), currencyTo);
+            Money money = operationToDo(valueOfTheTicket, pricePerShare);
 
-            return (subtract.getCurrency() == currencyTo) ? subtract.multiply(numShares) :
-                    subtract.change(ratio, currencyTo).multiply(numShares);
-
+            return valueOfTheTicket.getCurrency().equals(currencyTo) ? money.multiply(numShares) :
+                    money.change(ratio, currencyTo).multiply(numShares);
         }catch (Exception e) {
             throw new EvaluationException("Mssg");
+
         }
     }
+
+    public abstract Money operationToDo (Money valueOfTheTicket, Money pricePerShare);
 
 }

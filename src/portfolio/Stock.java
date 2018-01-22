@@ -27,7 +27,8 @@ public class Stock implements Investment {
         try {
             Money moneyOfTicket = stockExchange.value(this.ticket);
             BigDecimal ratio = moneyExchange.exchangeRatio(moneyOfTicket.getCurrency(), currencyTo);
-            return moneyOfTicket.change(ratio, currencyTo);
+            return moneyOfTicket.getCurrency().equals(currencyTo) ? moneyOfTicket.multiply(numShares) :
+                    moneyOfTicket.multiply(numShares).change(ratio, currencyTo);
         }catch (Exception e) {
             throw new EvaluationException("Mssg");
         }
