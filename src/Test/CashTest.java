@@ -77,7 +77,7 @@ public class CashTest {
     public class StockExchangeDouble implements StockExchange{
 
         @Override
-        public Money value(Ticket ticket) throws TicketDoesNotExistException {
+        public Money value(Ticket ticket) throws UnsupportedOperationException {
             throw new UnsupportedOperationException();
         }
     }

@@ -21,6 +21,11 @@ public class FutureBuy extends AbstractFuture{
         return super.evaluate(currencyTo, moneyExchange, stockExchange);
     }
 
+    /**
+     * @param valueOfTheTicket The value calculated.
+     * @param pricePerShare    The value agreed.
+     * @return The value calculated minus the agreed.
+     */
     @Override
     public Money operationToDo(Money valueOfTheTicket, Money pricePerShare) {
         return valueOfTheTicket.subtract(pricePerShare);

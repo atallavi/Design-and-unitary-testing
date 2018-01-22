@@ -12,6 +12,9 @@ public class Cash implements Investment {
 
     private Money money;
 
+    /**
+     * @param money Initializes in the constructor
+     */
     public Cash(Money money) {
         this.money = money;
     }
@@ -20,6 +23,13 @@ public class Cash implements Investment {
         return money;
     }
 
+    /**
+     * @param currencyTo    The currency of the money returned.
+     * @param moneyExchange It's a external service.
+     * @param stockExchange It's a external service.
+     * @return A new money evaluated.
+     * @throws EvaluationException In case something went wrong
+     */
     @Override
     public Money evaluate(Currency currencyTo, MoneyExchange moneyExchange, StockExchange stockExchange)
             throws EvaluationException {

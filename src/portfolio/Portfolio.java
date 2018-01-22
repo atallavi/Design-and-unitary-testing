@@ -13,16 +13,28 @@ public class Portfolio implements Investment {
 
     private HashSet<Investment> investmentsInPortfolio;
 
+    /**
+     * Initializes a new HashSet
+     */
     public Portfolio() {
         investmentsInPortfolio = new HashSet();
     }
+
+    /**
+     * @param investment adds the object which implements Investment interface to the hash set
+     */
     public void addInvestment(Investment investment) {
         investmentsInPortfolio.add(investment);
-
     }
 
-
-
+    /**
+     * @param currencyTo    The currency of the money returned.
+     * @param moneyExchange It's a external service.
+     * @param stockExchange It's a external service.
+     * @return 0 if the HashSet is empty, the result of the sum of evaluating every object of the Set by his own
+     * evaluate method.
+     * @throws EvaluationException In case something went wrong
+     */
     @Override
     public Money evaluate(Currency currencyTo, MoneyExchange moneyExchange, StockExchange stockExchange) throws EvaluationException{
       try {

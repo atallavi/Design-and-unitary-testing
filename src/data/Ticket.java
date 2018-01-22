@@ -2,10 +2,16 @@ package data;
 
 import java.util.Objects;
 
+/**
+ * Ticket class represents the name of a company in the market.
+ */
 public class Ticket {
 
     private String name;
 
+    /**
+     * @param name the acronym of the company name
+     */
     public Ticket (String name) {
         this.name = name;
     }

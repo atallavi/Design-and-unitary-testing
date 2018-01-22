@@ -7,11 +7,11 @@ import org.junit.Before;
 import org.junit.Test;
 import portfolio.EvaluationException;
 import portfolio.FutureBuy;
-import portfolio.Stock;
 import services.MoneyExchange;
 import services.RatioDoesNotExistException;
 import services.StockExchange;
 import services.TicketDoesNotExistException;
+
 
 import java.math.BigDecimal;
 
@@ -59,11 +59,30 @@ public class FutureBuyTest {
         Money evaluated = futureBuy.evaluate(currencyFrom, moneyExchangeDouble, stockExchangeDouble);
         assertEquals(new Money(new BigDecimal("900"), currencyFrom), evaluated);
     }
-    @Test (expected = RatioDoesNotExistException.class)
+
+    @Test (expected = EvaluationException.class)
     public void evaluate_when_ratio_does_not_exist () throws Exception {
         futureBuy = new FutureBuy(ticket, 10, new Money(new BigDecimal("10"), currencyFrom));
-        Money evaluated = futureBuy.evaluate(currencyTo, moneyExchangeDouble, stockExchangeDouble);
+        Money evaluated = futureBuy.evaluate(currencyTo, new MoneyExchangeDoubleNoRatioAvailable(), stockExchangeDouble);
+
+    }
+    public class MoneyExchangeDoubleNoRatioAvailable implements MoneyExchange {
+        @Override
+        public BigDecimal exchangeRatio(Currency from, Currency to) throws RatioDoesNotExistException, EvaluationException {
+            throw new RatioDoesNotExistException("No ratio available");
+        }
+    }
+    @Test(expected = EvaluationException.class)
+    public void evaluate_when_ticket_does_not_exist () throws EvaluationException {
+        futureBuy = new FutureBuy(ticket, 10, new Money(new BigDecimal("10"), currencyFrom));
+        Money evaluated = futureBuy.evaluate(currencyTo, moneyExchangeDouble, new StockExchangeDoubleNoTicketAvaliable());
+    }
+    public class StockExchangeDoubleNoTicketAvaliable implements StockExchange {
+        @Override
+        public Money value(Ticket ticket) throws TicketDoesNotExistException, RatioDoesNotExistException {
+            throw new RatioDoesNotExistException("No ratio available");
+        }
     }
 
-    
+
 }

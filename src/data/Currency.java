@@ -2,10 +2,16 @@ package data;
 
 import java.util.Objects;
 
+/**
+ * Currency class represents the name of a badge.
+ */
 public class Currency {
 
     private String name;
 
+    /**
+     * @param name the name of the the badge.
+     */
     public Currency(String name) {
         this.name = name;
     }

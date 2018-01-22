@@ -1,4 +1,4 @@
-package portfolio;
+package Test;
 
 import data.Currency;
 import data.Money;
